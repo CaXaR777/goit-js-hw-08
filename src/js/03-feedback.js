@@ -68,11 +68,16 @@ function input() {
 }
 function submit(event) {
   event.preventDefault();
-  const dataLog = {
+  if (refs.input.value && refs.textarea.value) {
+    const dataLog = {
       email: refs.input.value,
       message: refs.textarea.value,
   };
   console.log(dataLog);
   refs.form.reset();
   localStorage.removeItem('feedback-form-state')
+  } else {
+    alert('Увага! Всі поля форми мають бути заповнені!');
+  }
+  
 }
