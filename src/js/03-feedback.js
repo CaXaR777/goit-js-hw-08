@@ -83,45 +83,46 @@ function submit(event) {
 //Пропонуємо зробити невелику технічну задачу:
 
 //Задача: не змінюючи логіки, змінити структуру коду, щоби вона відповідала принципу DRY:
-function stateChanger(operation, keys, key, i) {
-  for (i = 0; i < keys.length; i++) {
-    key = keys[i];
-    switch (operation) {
-      case 'Apply':
-        this[key] = styleState[key];
-        break;
+// function stateChanger(operation, keys, key, i) {
+//   for (i = 0; i < keys.length; i++) {
+//     key = keys[i];
+//     switch (operation) {
+//       case 'Apply':
+//         this[key] = styleState[key];
+//         break;
 
-      case 'Default':
-        this[key] = STYLES[key].canvas;
-        break;
+//       case 'Default':
+//         this[key] = STYLES[key].canvas;
+//         break;
 
-      case 'Get':
-        styleState[key] = this[key];
-        break;
+//       case 'Get':
+//         styleState[key] = this[key];
+//         break;
 
-      default:
-        console.log('failed');
-    }
-  }
-}
+//       default:
+//         console.log('failed');
+//     }
+//   }
+// }
 
-ctx.prototype.__applyStyleState = function (styleState) {
-  var keys = Object.keys(styleState),
-    i,
-    key;
-  stateChanger('Apply', keys, key, i);
-};
-ctx.prototype.__setDefaultStyles = function () {
-  var keys = Object.keys(STYLES),
-    i,
-    key; // keys of object - object selection
-  stateChanger('Default', keys, key, i);
-};
-ctx.prototype.__getStyleState = function () {
-  var i,
-    styleState = {},
-    keys = Object.keys(STYLES),
-    key;
-  stateChanger('Get', keys, key, i);
-  return styleState;
-};
+// ctx.prototype.__applyStyleState = function (styleState) {
+//   var keys = Object.keys(styleState),
+//     i,
+//     key;
+//   stateChanger('Apply', keys, key, i);
+// };
+// ctx.prototype.__setDefaultStyles = function () {
+//   var keys = Object.keys(STYLES),
+//     i,
+//     key; // keys of object - object selection
+//   stateChanger('Default', keys, key, i);
+// };
+// ctx.prototype.__getStyleState = function () {
+//   var i,
+//     styleState = {},
+//     keys = Object.keys(STYLES),
+//     key;
+//   stateChanger('Get', keys, key, i);
+//   return styleState;
+// };
+
